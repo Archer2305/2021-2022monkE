@@ -1,7 +1,7 @@
 "6/29
-#prog
+# prog
 * added auton function test
 * added tracking wheels into code
-#Build
+# Build
 *finished adding both tracking wheels
 "
