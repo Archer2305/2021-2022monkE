@@ -1,4 +1,7 @@
 #include "main.h"
+void autonomous(){
+	move();
+}
 void initialize(){
 	pros::lcd::initialize();
 	pros::lcd::set_text(1, "L bozo");
