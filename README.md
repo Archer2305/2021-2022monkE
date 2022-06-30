@@ -3,5 +3,5 @@
 * added auton function test
 * added tracking wheels into code
 # Build
-*finished adding both tracking wheels
+* finished adding both tracking wheels
 "
