@@ -1,3 +1,7 @@
+#pragma
 #include "main.h"
 using namespace okapi;
-void move();
+extern float c;
+void moveRight(int rpm);
+void moveLeft(int rpm);
+void move(float feet);

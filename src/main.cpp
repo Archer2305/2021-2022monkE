@@ -1,9 +1,11 @@
 #include "main.h"
 void autonomous(){
-	move();
+	move(1);
 }
 void initialize(){
 	pros::lcd::initialize();
+	pros::ADIEncoder rightTracking ('A', 'B', false);
+	pros::ADIEncoder leftTracking ('C', 'D', true);
 	pros::lcd::set_text(1, "L bozo");
 }
 void opcontrol(){

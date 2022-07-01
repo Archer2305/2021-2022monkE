@@ -18,7 +18,6 @@ Motor rightBottom(10, false, AbstractMotor::gearset::blue, AbstractMotor::encode
 Motor leftFront(4, true, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);//motor for the front (drive)
 Motor leftTop(5, false, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);//the right motor on he top, back (drive)
 Motor leftBottom(17, true, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);// left motor on the bottom,back (drive)
-
   std::shared_ptr<OdomChassisController> drive =
      ChassisControllerBuilder()
     .withMotors({leftFront, leftTop, leftBottom}, {rightFront, rightTop, rightBottom})
