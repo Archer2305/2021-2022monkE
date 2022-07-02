@@ -10,9 +10,17 @@
  6/30
 # prog
 * coded our own version of odom
-* moves and turns on its own without using okapi to be able to implement 
+* moves and turns on its own 
 * grouped motors
 
 # build
 * added flywheel
-"
+
+
+
+
+7/1
+# prog
+* corrected errors in auton
+* reworked math system to be able to account for PID
+* added flywheel and intake
