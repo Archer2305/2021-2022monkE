@@ -2,15 +2,7 @@
 
 using namespace okapi;
 
-/*
-right front: port 6
-right top: port 1
-right bottom: port 10
 
-left front: port:4
-left top: port 14
-left bottom: port 1
-*/
 Motor rightFront( 6, false, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);// motor for the front(drive)
 Motor rightTop(1, true, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);// the right motor on he top, back (drive)
 Motor rightBottom(10, false, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);// right motor on the bottom,back (drive)

@@ -6,7 +6,7 @@ pros::ADIEncoder leftTracking ('C', 'D', false);
 float c=17.27875957f;
 void turn(float degree){
   if(degree>0){
-    while(rightTracking.get_value()<(((3.1415/180)*14*degree)*(4320/c))){
+    while(rightTracking.get_value()<(((3.1415/180)*(14/12)*degree)*(4320/c))){
       /*Im actually a genuis for this omg
       this takes the diameter (between the wheels from the left and right sides) and makes a circle, then it calculates
       the amount of degrees the encoder needs to measure in order to travel that distance x
@@ -15,7 +15,9 @@ moveRight(600);
 }
   }
   if(degree<0){
+      while(leftTracking.get_value()<(((3.1415/180)*14*degree)*(4320/c))){
 moveLeft(600);
+}
   }
   moveRight(0);
   moveLeft(0);

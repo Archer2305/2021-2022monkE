@@ -12,6 +12,7 @@ void opcontrol(){
 	okapi::Rate rate;
 	while (true){
 		updateDrive();
+		updateIntake();
 		rate.delay(10_Hz);
 	}
 }
