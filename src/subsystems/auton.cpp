@@ -55,17 +55,17 @@ moveLeft(0);
 
   void moveTo(float x,float y){
     //refer to the desmos https://www.desmos.com/calculator/ocgq6lfaxp
+    //updated desmos https://www.desmos.com/calculator/xwelxnljuu
   //calculate distance
   float d=sqrt((x-0.5833)*(x-0.5833))+(y*y);
   //calculate the degrees
   float De=0;
   //calculate the arc
   float arc=(3.1415/180)*(14/12)*De;
-  if((x>0&&y>0)){
+  if((x>0.5833&&y>0)){
   De=atan((y/(x-0.5833))+90);
-  }
-  if(x<0&&y>0){
-   De=atan((y/(x-0.5833))-90);
+}else{
+   De=-1*(atan((y/(x-0.5833))-90));
   }
   //ok now that the initializations are done we can do the logic part of the turn
   if(De=0){
