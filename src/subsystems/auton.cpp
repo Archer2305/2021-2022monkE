@@ -63,9 +63,9 @@ moveLeft(0);
   //calculate the arc
   float arc=(3.1415/180)*(14/12)*De;
   if((x>0.5833&&y>0)){
-  De=atan((y/(x-0.5833))+90);
+  De=-1*(atan((y/(x-0.5833)))+90);
 }else{
-   De=-1*(atan((y/(x-0.5833))-90));
+   De=(atan((y/(x-0.5833))+90));
   }
   //ok now that the initializations are done we can do the logic part of the turn
   if(De=0){
