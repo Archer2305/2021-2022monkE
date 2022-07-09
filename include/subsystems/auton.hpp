@@ -1,6 +1,7 @@
 #pragma
 #include "main.h"
 using namespace okapi;
+extern Rate rate;
 extern float c;
 extern float targetR;
 extern float targetL;

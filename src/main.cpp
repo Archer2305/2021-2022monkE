@@ -1,6 +1,13 @@
 #include "main.h"
 void autonomous(){
-	move(1);
+	okapi::Rate rate;
+	while (true) {
+	pros::lcd::set_text(2, "auton function running");
+	moveTo(2.0,2.0);
+	rate.delay(10_Hz);
+
+}
+
 }
 void initialize(){
 	pros::lcd::initialize();

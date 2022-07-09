@@ -1,6 +1,7 @@
 #include "main.h"
 #include "drive.hpp"
 using namespace okapi;
+	okapi::Rate rate;
 pros::ADIEncoder rightTracking ('A', 'B', true);
 pros::ADIEncoder leftTracking ('C', 'D', false);
 float c=17.27875957f;
@@ -56,39 +57,50 @@ moveLeft(0);
   void moveTo(float x,float y){
     //refer to the desmos https://www.desmos.com/calculator/ocgq6lfaxp
     //updated desmos https://www.desmos.com/calculator/xwelxnljuu
+    pros::lcd::set_text(3, "Going inside moveTo");
   //calculate distance
   float d=sqrt((x-0.5833)*(x-0.5833))+(y*y);
   //calculate the degrees
   float De=0;
   //calculate the arc
-  float arc=(3.1415/180)*(14/12)*De;
+  float arc=0;
   if((x>0.5833&&y>0)){
-  De=-1*(atan((y/(x-0.5833)))+90);
+  De=-1*((atan((y/(x-0.5833)))*(180/3.1415))+90);
 }else{
-   De=(atan((y/(x-0.5833))+90));
+   De=((atan((y/(x-0.5833))*(180/3.1415))+90));
   }
+	arc=(3.1415/180)*(14/12)*De
   //ok now that the initializations are done we can do the logic part of the turn
-  if(De=0){
+  if(De==0){
+
     while(rightTracking.get_value()<(d*(4320/c))){
+
           moveRight(300);
           moveLeft(300);
+          rate.delay(10_Hz);
     }
     //stops the motors once the target is met
-    moveRight(0);
-    moveLeft(0);
+    // moveRight(0);
+    // moveLeft(0);
   }else if(De>0){
-  while(rightTracking.get_value()<(3.1415/180)*(14/12)*De){
-
+  while(rightTracking.get_value()<((3.1415/180)*(14/12)*De)){
+  pros::lcd::set_text(4, "Entered while loop");
     moveRight((d/((3.1415/180)*(14/12)*De)+d));
     moveLeft(600);
+    rate.delay(10_Hz);
+
   }
   }else if(De<0){
-    while(leftTracking.get_value()<(3.1415/180)*(14/12)*De){
-
+    pros::lcd::set_text(5, "Entered if loop");
+    while(leftTracking.get_value()<((3.1415/180)*(14/12)*De)){
+pros::lcd::set_text(4, "Entered while loop");
       moveLeft((d/((3.1415/180)*(14/12)*De)+d));
       moveRight(600);
+      rate.delay(10_Hz);
     }
 }
+
+// stops motors once target is met
 moveRight(0);
 moveLeft(0);
 }
