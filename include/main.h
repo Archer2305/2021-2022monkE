@@ -77,7 +77,9 @@ void opcontrol(void);
  */
   #include "subsystems/drive.hpp"
   #include "subsystems/auton.hpp"
+  #include "subsystems/odom.hpp"
   #include "subsystems/intake.hpp"
+  #include "subsystems/lever.hpp"
 //#include <iostream
 #endif
 
