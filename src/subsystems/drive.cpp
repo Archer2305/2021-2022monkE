@@ -3,20 +3,22 @@
 using namespace okapi;
 
 
-Motor rightFront(15, false, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);// motor for the front(drive)
-Motor rightTop(11, true, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);// the right motor on he top, back (drive)
+Motor rightFront(16, false, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);// motor for the front(drive)
+Motor rightTop(13, true, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);// the right motor on he top, back (drive)
 Motor rightBottom(12, false, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);// right motor on the bottom,back (drive)
 
-Motor leftFront(14, true, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);//motor for the front (drive)
-Motor leftTop(13, false, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);//the right motor on he top, back (drive)
+Motor leftFront(5, true, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);//motor for the front (drive)
+Motor leftTop(1, false, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);//the right motor on he top, back (drive)
 Motor leftBottom(2, true, AbstractMotor::gearset::blue, AbstractMotor::encoderUnits::degrees);// left motor on the bottom,back (drive)
+
+// MotorGroup left(leftFront,leftTop,leftBottom);
   std::shared_ptr<OdomChassisController> drive =
      ChassisControllerBuilder()
     .withMotors({leftFront, leftTop, leftBottom}, {rightFront, rightTop, rightBottom})
     .withDimensions(AbstractMotor::gearset::blue, {{4_in, 13.7_in}, okapi::imev5GreenTPR})
-    .withSensors(
-        ADIEncoder{'A', 'B'}, // left encoder in ADI ports A & B
-        ADIEncoder{'C', 'D', true})  // right encoder in ADI ports C & D (reversed)
+    // .withSensors(
+    //     ADIEncoder{'G', 'F'}, // left encoder in ADI ports A & B
+    //     ADIEncoder{'E', 'D', true})  // right encoder in ADI ports C & D (reversed)
     .withOdometry({{2.75_in, 7_in}, quadEncoderTPR}) //specifies the tracking wheels dimentions
     .buildOdometry();
 
