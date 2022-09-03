@@ -24,3 +24,9 @@
 * corrected errors in auton
 * reworked math system to be able to account for PID
 * added flywheel and intake
+
+9/2/22
+#prog
+*added custom turn function 
+*using inertials now
+*start working on never miss math
