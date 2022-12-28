@@ -1,6 +1,6 @@
 #pragma
 #include "main.h"
-using namespace okapi;
+using namespace okapi;    
 extern float x;
 extern float y;
 extern float slope;
