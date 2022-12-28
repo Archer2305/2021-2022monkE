@@ -1,0 +1,10 @@
+1) odometry
+2) pid
+3) 2d motion profiling
+4) copy over subsystems
+
+
+add files into main and include their hpp file too.
+
+
+        
